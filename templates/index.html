@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<html>
+<head>
+</head>
+<body>
+<div class="table-users">
+    <div class="header">Cases Status</div>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+              <th>Case Number</th>
+              <th>Date</th>
+              <th>Form</th>
+              <th>Status</th>
+            </tr>
+
+        </thead>
+        <tbody>
+          {% for row in status %}
+              <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+              </tr>
+          {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+
+
+ </body>
+</html>
+

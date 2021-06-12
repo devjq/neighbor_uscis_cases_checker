@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Check multiple USCIS Case status">
+    <meta name="keywords" content="USCIS,case,status">
+    <title>Check USCIS Case Status</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+</head>
+<body>
+<h1 align="center">Check your USCIS case, and case numbers before and after yours!</h1>
+<div id="form-main">
+    <div id="form-div">
+        <form method="post">  <!-- 指定提交方法为 POST -->
+            <label for="cnum">Case Number</label>
+            <input type="text" name="cnum" id="cnum"><br>  <!-- 文本输入框 -->
+            <label for="n_count"># of Cases to look before and after (max=10)</label>
+            <input type="number" name="n_count" id="n_count" min="0" max="10"><br>  <!-- 文本输入框 -->
+            <input type="submit" name="submit" value="Submit" onclick="$('#loading').show();">  <!-- 提交按钮 -->
+        </form>
+        <div id="loading" style="display:none;"><img src="loadingimage.gif" alt="" class="center"/>Loading!</div>
+    </div>
+</div>
+
+</body>
+</html>
